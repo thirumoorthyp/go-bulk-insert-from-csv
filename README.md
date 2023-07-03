@@ -34,3 +34,9 @@ It took ***2 sec*** to import 5k records.
 
 It look long time compared to Python and PHP. 
 Slow performance on bulk insert - https://github.com/mattn/go-sqlite3/issues/1145
+So tried with single row insert with same go-sqlite3 cgo package. It took ***1.5 sec***(https://github.com/thirumoorthyp/go-lang-csv-import-sqlite.)
+
+Conclusion:
+In terms of raw performance, Go tends to be faster than Python because it is compiled to machine code, whereas Python is an interpreted language. Additionally, Go was designed with a focus on efficiency and concurrent programming, making it well-suited for handling concurrent tasks and parallelism.
+
+However, when it comes to database connections and performance, the key factor is often not the language itself but rather the database driver or library being used to connect and interact with the database. Both Go and Python have mature and efficient database libraries that can connect to various database systems.
