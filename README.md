@@ -3,7 +3,7 @@ This go-lang code is used to bulk import data from CSV file into the SQLite data
 
 SQLite is a file-based database engine that provides a lightweight and embedded solution for managing databases. It is designed to be simple and self-contained, making it suitable for smaller-scale applications or scenarios where a full client-server database is not required.
 
-When it comes to connecting to a SQLite database, Python offers the sqlite3 module in its standard library, which provides a convenient way to interact with SQLite databases. The sqlite3 module is implemented in C and is highly optimized for performance.
+When it comes to connecting to an SQLite database, Python offers the sqlite3 module in its standard library, which provides a convenient way to interact with SQLite databases. The sqlite3 module is implemented in C and is highly optimized for performance.
 
 On the other hand, Go also provides a package called database/sql in its standard library that allows you to work with various databases, including SQLite. Go's database/sql package leverages the go-sqlite3 driver, which is a popular and efficient SQLite driver for Go.
 
