@@ -42,7 +42,17 @@ Python Import: https://github.com/thirumoorthyp/import_csv_into_sqlite_using_pyt
 
 PHP: https://github.com/thirumoorthyp/php_import_csv_into_sqlite. It took ***481ms*** for 5k records
 
+
+SQLite is a file-based database engine that provides a lightweight and embedded solution for managing databases. It is designed to be simple and self-contained, making it suitable for smaller-scale applications or scenarios where a full client-server database is not required.
+
+When it comes to connecting to a SQLite database, Python offers the sqlite3 module in its standard library, which provides a convenient way to interact with SQLite databases. The sqlite3 module is implemented in C and is highly optimized for performance.
+
+On the other hand, Go also provides a package called database/sql in its standard library that allows you to work with various databases, including SQLite. Go's database/sql package leverages the go-sqlite3 driver, which is a popular and efficient SQLite driver for Go.
+
 ***Conclusion:***
+In terms of performance, both Python and Go can achieve satisfactory results when connecting to a SQLite database. However, there may be cases where one language performs better than the other due to differences in implementation details, such as how the database driver is designed or how the code is written.
+
 In terms of raw performance, Go tends to be faster than Python because it is compiled to machine code, whereas Python is an interpreted language. Additionally, Go was designed with a focus on efficiency and concurrent programming, making it well-suited for handling concurrent tasks and parallelism.
 
-However, when it comes to database connections and performance, the key factor is often not the language itself but rather the database driver or library being used to connect and interact with the database. Both Go and Python have mature and efficient database libraries that can connect to various database systems.
+
+
