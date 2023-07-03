@@ -38,7 +38,7 @@ This go-lang code took ***2 sec*** to import 5k records from CSV file into the S
 
 It look long time compared to Python(https://github.com/thirumoorthyp/import_csv_into_sqlite_using_python. It took ***250ms***) and PHP(https://github.com/thirumoorthyp/php_import_csv_into_sqlite. It took ***481ms***) for importing 5k record. So tried with 1 record insert with same go-sqlite3 cgo package. It took ***1.5 sec***(https://github.com/thirumoorthyp/go-lang-csv-import-sqlite).
 
-So the huge performance difference is because of go-sqlite3 cgo package. Later found that an existing issue (https://github.com/mattn/go-sqlite3/issues/1145)
+So the huge performance difference is because of go-sqlite3 cgo package. Later found that an existing issue in go-sqlite3 cgo package(https://github.com/mattn/go-sqlite3/issues/1145)
 
 ***Conclusion:***
 
