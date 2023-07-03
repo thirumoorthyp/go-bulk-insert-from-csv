@@ -37,8 +37,10 @@ Slow performance on bulk insert - https://github.com/mattn/go-sqlite3/issues/114
 So tried with single row insert with same go-sqlite3 cgo package. It took ***1.5 sec***(https://github.com/thirumoorthyp/go-lang-csv-import-sqlite.)
 
 Also Tried performance test in Python and PHP 
-Python Import: https://github.com/thirumoorthyp/import_csv_into_sqlite_using_python. It took ***250 ms*** for 5k record
-PHP: https://github.com/thirumoorthyp/php_import_csv_into_sqlite. It took ***481ms ***
+
+Python Import: https://github.com/thirumoorthyp/import_csv_into_sqlite_using_python. It took ***250ms*** for 5k record
+
+PHP: https://github.com/thirumoorthyp/php_import_csv_into_sqlite. It took ***481ms*** for 5k records
 
 ***Conclusion:***
 In terms of raw performance, Go tends to be faster than Python because it is compiled to machine code, whereas Python is an interpreted language. Additionally, Go was designed with a focus on efficiency and concurrent programming, making it well-suited for handling concurrent tasks and parallelism.
