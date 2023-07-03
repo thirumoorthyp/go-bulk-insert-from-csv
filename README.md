@@ -27,3 +27,10 @@ go get github.com/modernc.org/sqlite
 ```shell
 go run main.go
 ```
+
+This go-lang code is used to bulk import data from CSV file into the SQLite database.
+
+It took ***2 sec*** to import 5k records. 
+
+It look long time compared to Python and PHP. 
+Slow performance on bulk insert - https://github.com/mattn/go-sqlite3/issues/1145
