@@ -1,4 +1,4 @@
-# go-bul-insert-from-csv-into-sqlite
+# go-lang-bulk-insert-from-csv-into-sqlite
 This go-lang code is used to bulk import data from CSV file into the SQLite database.
 
 # Manual Steps: 
