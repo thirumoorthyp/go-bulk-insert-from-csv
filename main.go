@@ -1,5 +1,5 @@
 package main
-
+//Import necessary packages
 import (
 	"bytes"
 	"database/sql"
@@ -8,8 +8,7 @@ import (
 	"os"
 	"strconv"
 	"time"
-
-	_ "modernc.org/sqlite"
+	_ "mattn/go-sqlite3"
 )
 
 func main() {
@@ -23,25 +22,25 @@ func main() {
 
 // To get SQLite connection
 func getSQLiteDB() (*sql.DB, error) {
-	x, err := sql.Open("sqlite", "./sqlite_employees.db")
+	dbConn, err := sql.Open("sqlite3", "./sqlite_employees.db")
 	if err != nil {
 		return nil, err
 	}
-	return x, nil
+	return dbConn, nil
 }
 
 // Function helps to insert data in bulk
 func bulkInsert() error {
-	x, err := getSQLiteDB()
+	dbConn, err := getSQLiteDB()
 	if err != nil {
 		return err
 	}
-	defer x.Close()
+	defer dbConn.Close()
 	records, err := loadCSV()
 	if err != nil {
 		return err
 	}
-	tx, err := x.Begin()
+	transaction, err := dbConn.Begin()
 	if err != nil {
 		return err
 	}
@@ -52,7 +51,7 @@ func bulkInsert() error {
 		}
 		buf.WriteString("(?,?,?,?,?)")
 	}
-	bulkInsertStmt, err := tx.Prepare(buf.String())
+	bulkInsertStmt, err := transaction.Prepare(buf.String())
 	if err != nil {
 		return err
 	}
@@ -80,11 +79,11 @@ func bulkInsert() error {
 			}
 			buf.WriteString("(?,?,?,?, ?)")
 		}
-		if _, err = tx.Exec(buf.String(), values...); err != nil {
+		if _, err = transaction.Exec(buf.String(), values...); err != nil {
 			return err
 		}
 	}
-	return tx.Commit()
+	return transaction.Commit()
 }
 
 func loadCSV() ([][]string, error) {
