@@ -5,7 +5,7 @@ SQLite is a file-based database engine that provides a lightweight and embedded 
 
 When it comes to connecting to an SQLite database, Python offers the sqlite3 module in its standard library, which provides a convenient way to interact with SQLite databases. The sqlite3 module is implemented in C and is highly optimized for performance.
 
-On the other hand, Go also provides a package called database/sql in its standard library that allows you to work with various databases, including SQLite. Go's database/sql package leverages the go-sqlite3 driver, which is a popular and efficient SQLite driver for Go.
+On the other hand, Go also provides a package called database/sql in its standard library that allows you to work with various databases, including SQLite. Go's database/sql package leverages the ***go-sqlite3*** package, which is a popular and efficient SQLite driver for Go.
 
 # Manual Steps: 
 ``` shell
