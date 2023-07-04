@@ -12,7 +12,6 @@ import (
 )
 
 func main() {
-
 	start := time.Now()
 	bulkInsert()
 	//Calculating total execution time
