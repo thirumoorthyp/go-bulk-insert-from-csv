@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 	"time"
-	_ "mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 
 // To get SQLite connection
 func getSQLiteDB() (*sql.DB, error) {
-	dbConn, err := sql.Open("sqlite3", "./sqlite_employees.db")
+	dbConn, err := sql.Open("sqlite", "./sqlite_employees.db")
 	if err != nil {
 		return nil, err
 	}
@@ -56,7 +56,6 @@ func bulkInsert() error {
 	}
 	var values []interface{}
 	for _, record := range records {
-
 		emp_id, _ := strconv.Atoi(record[0])
 		values = append(values, emp_id)
 		values = append(values, record[1])
